@@ -1,9 +1,6 @@
 from PageObject.LoginPage import LoginPage
-import pytest
-from selenium import webdriver
-
 from Utilities.customLogger import LogGen
-from Utilities.readProperties import Readconfig
+
 
 
 class Test_001_login:
@@ -33,8 +30,8 @@ class Test_001_login:
         self.driver = setup
         self.driver.get(self.baseurl)
         self.lp = LoginPage(self.driver)
-        self.lp.setUsername(self.username)
-        self.lp.setPassword(self.password)
+        self.lp.credentials('Username', self.username)
+        self.lp.credentials('Password', self.username)
         self.lp.clickLogin()
         act_title = self.driver.title
         if act_title == 'Control Panel - J2Store PRO admin Demo - Administration':

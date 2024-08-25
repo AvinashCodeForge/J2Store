@@ -1,16 +1,11 @@
 import time
-
 from PageObject.LoginPage import LoginPage
-import pytest
-from selenium import webdriver
 from Utilities import ExcelUtils
-
 from Utilities.customLogger import LogGen
-from Utilities.readProperties import Readconfig
 
 
 class Test_002_login_ddt:
-    baseurl = Readconfig.getApplicationURL()
+    baseurl = 'http://j2store.net/v3/administrator/index.php'
     file = ".\\TestData\\LoginDataJ2Store.xlsx"
 
     logger = LogGen.loggen()
