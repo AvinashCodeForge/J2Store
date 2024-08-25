@@ -1,12 +1,17 @@
 from PageObject.LoginPage import LoginPage
 from Utilities.customLogger import LogGen
-
+import configparser
+from Utilities.readProperties import Readconfig
 
 
 class Test_001_login:
-    baseurl = 'http://j2store.net/v3/administrator/index.php'
-    username = 'manager'
-    password = 'manager'
+
+    config = configparser.ConfigParser()
+    config.read("..\\Configuration\\config.ini")
+
+    baseurl = Readconfig.getApplicationURL()
+    username = Readconfig.getUsername()
+    password = Readconfig.getPassword()
 
     logger = LogGen.loggen()
 
