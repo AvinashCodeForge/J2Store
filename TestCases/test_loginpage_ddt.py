@@ -1,4 +1,7 @@
 import time
+
+import pytest
+
 from PageObject.LoginPage import LoginPage
 from Utilities import ExcelUtils
 from Utilities.customLogger import LogGen
@@ -10,6 +13,7 @@ class Test_002_login_ddt:
 
     logger = LogGen.loggen()
 
+    @pytest.mark.regression
     def test_login(self, setup):
         self.driver = setup
         self.driver.get(self.baseurl)

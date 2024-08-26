@@ -1,3 +1,5 @@
+import pytest
+
 from PageObject.LoginPage import LoginPage
 from Utilities.customLogger import LogGen
 import configparser
@@ -9,12 +11,13 @@ class Test_001_login:
     config = configparser.ConfigParser()
     config.read("..\\Configuration\\config.ini")
 
-    baseurl = Readconfig.getApplicationURL()
-    username = Readconfig.getUsername()
-    password = Readconfig.getPassword()
+    baseurl = 'http://j2store.net/v3/administrator/index.php'
+    username = 'manager'
+    password = 'manager'
 
     logger = LogGen.loggen()
 
+    @pytest.mark.sanity
     def test_homePageTitle(self, setup):
         self.logger.info("********* Test_001_Case *********")
         self.logger.info("********* Verifying Home Page Title *********")
@@ -31,6 +34,8 @@ class Test_001_login:
             self.logger.info("********* Home Page Title is Failed *********")
             assert False
 
+    @pytest.mark.sanity
+    @pytest.mark.regression
     def test_login(self, setup):
         self.driver = setup
         self.driver.get(self.baseurl)
