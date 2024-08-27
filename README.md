@@ -27,15 +27,6 @@ The key components include:
 -  Test Cases: Pytest scripts that execute the test scenarios.
 -  Utilities: Custom logging and helper functions for enhanced test management.
 
-### Installation
-To set up the project locally:
--  Clone the repository:
-    -  git clone https://github.com/AvinashCodeForge/J2Store.git
--  Navigate to the project directory:
-    -  cd J2Store-Automation
--  Install the required dependencies
-    -  pip install -r requirements.txt
-
 ### Usage
 Run the test suite with the following command:
   -  pytest --html=reports/report.html --self-contained-html
