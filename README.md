@@ -39,6 +39,7 @@ To set up the project locally:
 ### Usage
 Run the test suite with the following command:
   -  pytest --html=reports/report.html --self-contained-html
+
 For a specific test case:
   -  pytest -k "test_login"
 
