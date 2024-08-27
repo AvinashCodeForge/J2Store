@@ -3,7 +3,6 @@ import pytest
 from PageObject.LoginPage import LoginPage
 from Utilities.customLogger import LogGen
 import configparser
-from Utilities.readProperties import Readconfig
 
 
 class Test_001_login:
@@ -34,14 +33,13 @@ class Test_001_login:
             self.logger.info("********* Home Page Title is Failed *********")
             assert False
 
-    @pytest.mark.sanity
     @pytest.mark.regression
     def test_login(self, setup):
         self.driver = setup
         self.driver.get(self.baseurl)
         self.lp = LoginPage(self.driver)
         self.lp.credentials('Username', self.username)
-        self.lp.credentials('Password', self.username)
+        self.lp.credentials('Password', self.password)
         self.lp.clickLogin()
         act_title = self.driver.title
         if act_title == 'Control Panel - J2Store PRO admin Demo - Administration':
