@@ -30,7 +30,7 @@ The key components include:
 ### Installation
 To set up the project locally:
 -  Clone the repository:
-    -  git clone https://github.com/yourusername/J2Store-Automation.git
+    -  git clone https://github.com/AvinashCodeForge/J2Store.git
 -  Navigate to the project directory:
     -  cd J2Store-Automation
 -  Install the required dependencies
