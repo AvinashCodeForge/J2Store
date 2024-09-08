@@ -5,7 +5,6 @@ from Utilities.customLogger import LogGen
 
 @pytest.mark.usefixtures("setup")
 class Test_001_login:
-
     baseurl = 'http://j2store.net/v3/administrator/index.php'
     username = 'manager'
     password = 'manager'
@@ -13,8 +12,9 @@ class Test_001_login:
     logger = LogGen.loggen()
 
     '''
-        - This test case will get and assert the home page title.
+        - This test case will assert the home page title.
     '''
+
     @pytest.mark.sanity
     def test_homePageTitle(self):
         self.logger.info("********* Test_001_Case *********")
@@ -30,8 +30,9 @@ class Test_001_login:
             assert False
 
     '''
-        - This test case will get and assert the login page title.
+        - This test case will assert the login page title.
     '''
+
     @pytest.mark.regression
     def test_login(self):
         self.driver.get(self.baseurl)
@@ -41,7 +42,9 @@ class Test_001_login:
         self.lp.clickLogin()
         act_title = self.driver.title
         if act_title == 'Control Panel - J2Store PRO admin Demo - Administration':
+            self.logger.info("********* Home Page Title is Passed *********")
             assert True
         else:
             self.driver.save_screenshot(filename=".\\Screenshots\\" + "AfterLoginTitle.png")
+            self.logger.info("********* Home Page Title is Failed *********")
             assert False
