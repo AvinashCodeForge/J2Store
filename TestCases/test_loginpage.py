@@ -11,10 +11,7 @@ class Test_001_login:
 
     logger = LogGen.loggen()
 
-    '''
-        - This test case will assert the home page title.
-    '''
-
+    '''Verifies the home page title.'''
     @pytest.mark.sanity
     def test_homePageTitle(self):
         self.logger.info("********* Test_001_Case *********")
@@ -29,10 +26,7 @@ class Test_001_login:
             self.logger.info("********* Home Page Title is Failed *********")
             assert False
 
-    '''
-        - This test case will assert the login page title.
-    '''
-
+    '''Verifies the login page title.'''
     @pytest.mark.regression
     def test_login(self):
         self.driver.get(self.baseurl)
